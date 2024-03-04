@@ -9,6 +9,10 @@ img {
     line-height: 0;
 }
 
+.wrap {
+    height: 100svh;
+    overflow: hidden;
+}
 .wrap-inner {
     display: flex;
     height: calc(100svh - 120px);
@@ -43,7 +47,7 @@ img {
     left: calc(100% + 1px);
     width: 100%;
     max-height: 0;
-    background-color: lightsteelblue;
+    background-color: rgb(184, 210, 243);
     opacity: 0;
     overflow: hidden;
     transition: all 0.3s;
@@ -54,15 +58,18 @@ img {
     padding: 15px 10px;
     border-right: 1px solid #000;
 }
-.depth2 > li:hover > a{
-    font-weight: bold;
-}
 .depth1  li:hover .depth2 {
     max-height: 415%;
     opacity: 1;
 }
-.depth1 > li:hover > a {
-    color: lightsteelblue;
+.depth1 > li:hover {
+    background-color: rgb(227, 237, 250);
+}
+.depth2 li:hover {
+    background: #000;
+}
+.depth2 li:hover a {
+    color: white;
 }
 
 
@@ -80,9 +87,16 @@ img {
     border-left: 1px solid #000;
     border-right: 1px solid #000;
 }
-h2 a {
+h2{
     font-weight: normal;
-    color: lightsteelblue;
+    border-radius: 10px;
+    background-color: lightsteelblue;
+}
+h2 a {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0 5px 10px;
+    font-size: 20px;
 }
 .banner {
     height: 120px;
@@ -94,13 +108,16 @@ h2 a {
     padding: 10px;
     border-top: 1px solid #000;
 }
+.notice ul {
+    padding-top: 10px;
+}
 .notice li {
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-.notice a {
+.notice li a {
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 10px;
 }
 .gallery {
     padding: 20px 10px;
@@ -148,6 +165,15 @@ h2 a {
     display: flex;
     width: 300%;
     height: 100%;
+    animation: slide 8s linear infinite;
+}
+@keyframes slide {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -200%;
+    }
 }
 .slide img {
     display: block;
